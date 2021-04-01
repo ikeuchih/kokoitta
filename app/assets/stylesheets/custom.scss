@@ -8,6 +8,7 @@ $gray-medium-light: #eaeaea;
 body{
   padding-top: 60px;
 }
+
 // overflow プロパティは、要素の内容が多すぎてブロックコンテキストに収まらない場合にどうするかを設定します。
 section{
   overflow: auto;
@@ -32,11 +33,17 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
 }
 
+.jumbotron h1{
+    color: #C0A2AB;
+}
+
 h1 {
     font-size: 3em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
+    font-weight: normal;
+    color: #C0A2AB;
 }
 
 

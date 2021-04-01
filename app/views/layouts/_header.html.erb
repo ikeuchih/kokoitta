@@ -1,12 +1,38 @@
 <header class= "navbar navbar-fixed-top navbar-inverse">
   <div class = "container">
     <%= link_to "kokoitta", root_path, id: "logo" %>
-      <nav>
-        <ul class= "nav navbar-nav navbar-rogout">
-          <li><%= link_to "Login",new_user_session_path %></li>
-          <li><%= link_to "Sign up",new_user_registration_path %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </nav>
+      <% if user_signed_in? %>
+          <nav>
+              <ul class= "nav navbar-nav navbar-rogin">
+                  <li><%= link_to "Home",root_path %></li>
+                  <li><%= link_to "Trend","#"%></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        User <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><%= link_to "Profile", current_user %></li>
+                        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                    </ul>
+                  </li>
+              </ul>
+          </nav>
+      <% else %>
+          <nav>
+              <ul class= "nav navbar-nav navbar-rogout">
+                  <li><%= link_to "Login",new_user_session_path %></li>
+                  <li><%= link_to "Sign up",new_user_registration_path %></li>
+                  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </nav>
+      <% end %>
   </div>
 </header>
+
+      <!--<nav>-->
+      <!--  <ul class= "nav navbar-nav navbar-rogout">-->
+      <!--    <li><%= link_to "Login",new_user_session_path %></li>-->
+      <!--    <li><%= link_to "Sign up",new_user_registration_path %></li>-->
+      <!--    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>-->
+      <!--  </ul>-->
+      <!--</nav>-->
