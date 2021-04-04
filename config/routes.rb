@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   get 'sessions/new'
 
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   get  '/help', to: 'static_pages#help'
   get  '/about', to: 'static_pages#about'
   
-  devise_for :users
   resources :users
+  resources :microposts, only: [:create, :destroy]
   
 end

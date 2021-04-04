@@ -20,13 +20,17 @@ class ApplicationController < ActionController::Base
         end
     end
 
-  #   def configure_permitted_parameters
-  #       added_attrs = [ :email, :username, :password, :password_confirmation ]       
-  #       devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-  #       devise_parameter_sanitizer.permit :account_update, keys: added_attrs
-  #       devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
-  #   end
-  #   # usernameとpasswordでのログインを可能にする
-  # end
-
+  private
+  
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:dander] = "Please log in."
+        redirect_to new_user_session_url
+      end
+    end
+    # ログインしていなければ
+    # ログイン前にいたページを維持する
+    # メッセージを表示して、ログインページに流す
+    
 end

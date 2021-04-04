@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
-
-  def show
-    @user = User.find(params[:id])
-  end
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   def new
-      @user = User.new(params[:user])
+    @user = User.new(params[:user])
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts
+    # .paginate(page: params[:page])
+    # redirect_to root_url and return unless @user.activated?   
+  end
+
   
   # def create
   #     @user = User.new(params[:user])
@@ -24,4 +29,10 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :email, :password,
                                    :password_confirmation)
     end
+    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+    
 end

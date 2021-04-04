@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :microposts, dependent: :destroy
+  # ユーザーに対してマイクロポストを複数紐づけるよ
+  # ユーザーが削除されれば一緒にマイクロポストも削除します
+  
     devise :database_authenticatable, :registerable,
             :recoverable, :rememberable, :validatable
     before_save { self.email = email.downcase }

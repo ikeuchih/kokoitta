@@ -11,6 +11,6 @@
 # # column: value
 
 hinano:
-    username: "hinano"
-    email: "hinano@example.com"
-    encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  username: hinano
+  email: hinano@example.com
+  password_digest: <%= User.digest('password') %>
