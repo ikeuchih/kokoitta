@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   private
   
     def logged_in_user
-      unless logged_in?
+      unless user_signed_in?
         store_location
         flash[:dander] = "Please log in."
         redirect_to new_user_session_url
