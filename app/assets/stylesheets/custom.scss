@@ -15,7 +15,7 @@ section{
 }
 
 // resize プロパティは、要素の寸法を変更できるかどうか、もしそうなら、どの方向に変更できるかを設定します。
-testarea{
+textarea {
   resize: vertical;
 }
 
@@ -65,8 +65,14 @@ p {
 // ヘッダー
 
 header {
+  .container {
     background-color:#C0A2AB;
+    .li {
+      color: #FFFAFA;
+    }
+  }
 }
+
 
 #logo {
   float: left;
@@ -77,7 +83,6 @@ header {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  color: #fffafa;
 }
 
 #logo:hover {
@@ -173,7 +178,17 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+  background-color: #faf0e6;
   @include box_sizing
+  
+}
+
+.btn-primary {
+  background-color: #C0A2AB;
+  border: 1px solid #C0A2AB;
+  &:hover {
+      background-color: #bc8f8f;
+      }
 }
 
 input {
@@ -192,7 +207,9 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
-  }
+    color: #a52a2a;
+}
+  
   .content {
     display: block;
     margin-left: 60px;
@@ -224,5 +241,14 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+// showpage
+  
+
+.row {
+  .col-md-8 {
+    color: #bc8f8f;
   }
 }

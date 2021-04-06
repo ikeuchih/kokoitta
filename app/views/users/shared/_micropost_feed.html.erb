@@ -1,0 +1,7 @@
+<% if @feed_items.any? %>
+    <ol class="microposts">
+        <%= render @feed_items %>
+    </ol>
+<% end %>
+
+<!--後ほど自分とフォローしているユーザーのみを表示させる-->
