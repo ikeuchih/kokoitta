@@ -174,14 +174,20 @@ aside {
 
 // forms
 
-input, textarea, select, .uneditable-input {
+input, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  background-color: #faf0e6;
   @include box_sizing
-  
 }
+
+textarea {
+  background-color: #faf0e6;
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 
 .btn-primary {
   background-color: #C0A2AB;
@@ -208,21 +214,23 @@ input {
     margin-top: 5em;
     padding-top: 0;
     color: #a52a2a;
-}
+  }
   
   .content {
     display: block;
     margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
   }
+  
+  .image {
+    background-color: #ffffff;
+  }
+  
   .timestamp {
     color: #B37E70;
     display: block;
     margin-left: 60px;
   }
+  
   .gravatar {
     float: left;
     margin-right: 10px;

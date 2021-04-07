@@ -9,8 +9,10 @@ class MicropostsController < ApplicationController
                 # 表示されない、、、、
                 redirect_to root_url
             else
-                render 'static_pages/home'
+                @feed_items = []
                 flash[:danger] = "error!"
+                # 表示されない、、、
+                redirect_to root_url
             end
         end
         
@@ -24,7 +26,7 @@ class MicropostsController < ApplicationController
     private
     
         def micropost_params
-            params.require(:micropost).permit(:content)
+            params.require(:micropost).permit(:content, :picture)
         end
         
         def correct_user
