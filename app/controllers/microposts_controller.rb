@@ -4,14 +4,16 @@ class MicropostsController < ApplicationController
     
         def create
             @micropost = current_user.microposts.build(micropost_params)
+            # binding.pry
             if @micropost.save
-                flash[:success] = "Micropost created!"
+                flash.now[:success] = "Micropost created!"
                 # 表示されない、、、、
                 redirect_to root_url
             else
                 @feed_items = []
-                flash[:danger] = "error!"
+                flash.now[:danger] = "error!"
                 # 表示されない、、、
+                logger.debug("testtesttest")
                 redirect_to root_url
             end
         end
