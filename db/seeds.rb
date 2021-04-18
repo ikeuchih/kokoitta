@@ -19,3 +19,40 @@ users = User.order(:created_at).take(6)
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
 end
+
+
+Tag.create([
+    { tag_name: 'Korea'},
+    { tag_name: 'Thailand'},
+    { tag_name: 'China'},
+    { tag_name: 'Malaysia'},
+    { tag_name: 'Singapore'},
+    { tag_name: 'Indonesia'},
+    { tag_name: 'Philippines'},
+    { tag_name: 'Bali'},
+    { tag_name: 'Cebu'},
+    { tag_name: 'Maldives'},
+    { tag_name: 'Mongolia'},
+    { tag_name: 'Taiwan'},
+    { tag_name: 'HongKong'},
+    { tag_name: 'Macau'},
+    { tag_name: 'America'},
+    { tag_name: 'Canada'},
+    { tag_name: 'Iceland'},
+    { tag_name: 'Italy'},
+    { tag_name: 'Austria'},
+    { tag_name: 'Switzerland'},
+    { tag_name: 'Sweden'},
+    { tag_name: 'Spain'},
+    { tag_name: 'Denmark'},
+    { tag_name: 'Germany'},
+    { tag_name: 'Norway'},
+    { tag_name: 'Hungary'},
+    { tag_name: 'Finland'},
+    { tag_name: 'France'},
+    { tag_name: 'Belgium'},
+    { tag_name: 'Poland'},
+    { tag_name: 'Portugal'},
+    { tag_name: 'Romania'},
+    { tag_name: 'Russia'},
+])

@@ -211,25 +211,36 @@ input {
     border-top: 1px solid #e8e8e8;;
   }
   .user {
-    margin-top: 5em;
+    margin-top: 0;
     padding-top: 0;
     color: #a52a2a;
+    display: block;
   }
   
   .content {
-    display: block;
-    margin-left: 60px;
+    margin-left: 10px;
+    padding-top: 0;
   }
   
   .image {
     background-color: #ffffff;
+    margin-top: 500px;
+    .tag_name {
+      background-color: #bc8f8f;
+      color: #ffffff;
+      text-align: center;
+      display: block;
+      margin-left: 250px;
+      margin-right: 300px;
+    }
+    .timestamp {
+      color: #B37E70;
+      display: block;
+      margin-left: 250px;
+      margin-right: 300px;
+    }
   }
   
-  .timestamp {
-    color: #B37E70;
-    display: block;
-    margin-left: 60px;
-  }
   
   .gravatar {
     float: left;
