@@ -1,6 +1,6 @@
 <h1>serch</h1>
 
-<%= form_tag search_microposts_path, method: :serch, class: 'searchForm' do %>
+<%= form_tag trend_index_path, method: :get, class: 'searchForm' do %>
       <%= select_tag :tag_id,
                      options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_maps_id]),
                      {

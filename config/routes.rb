@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get  '/about', to: 'static_pages#about'
   
   resources :users
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy, :show]
   resources :trend
   
   
