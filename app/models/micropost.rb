@@ -14,7 +14,10 @@ class Micropost < ApplicationRecord
   # tag_mapsテーブルを通してtagsテーブルとの関連付けを行う
   # 一つのタグしかつけれないのでhas_one
   
-
+  has_many :micropost_spots, dependent: :destroy
+  has_many :spottags, through: :micropost_spots
+  
+  
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
@@ -23,10 +26,15 @@ class Micropost < ApplicationRecord
  # ユーザーID・コンテンツが空白の場合はマイクロポストできないように
  
  
-    def save_tag(tag_ids)
-        Array(tag_ids).each do |tag_id|
+    def save_tag(tag_ids, spottag_ids)
+      tag_id_list = Array(tag_ids)
+      spottag_id_list = Array(spottag_ids)
+      
+        tag_id_list.zip(spottag_id_list).each do |tag_id, spottag_id|
             micropost_tag = Tag.find_by(id: tag_id)
             self.tags << micropost_tag
+            micropost_spot = Spottag.find_by(id: spottag_id)
+            self.spottags << micropost_spot
         end
     end
     # 引数として受け取ったidの配列に対してeachメソッドをかけて

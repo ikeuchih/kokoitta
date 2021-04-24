@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   end
   # ログイン後の遷移先
   
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :image]) 
+  end
+  # ストロングパラメーターは意図しない登録・更新を防ぐ、いわば脆弱性対策
+  
 
   
   protected

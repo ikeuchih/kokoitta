@@ -14,6 +14,9 @@
     <%= f.collection_select :tag_ids, Tag.all, :id, :tag_name %>
   <% end %>
 
+  <%= f.fields_for :spottag do |s| %>
+    <%= f.collection_select :spottag_ids, Spottag.all, :id, :name %>
+  <% end %>
   
   <%= f.submit "Post", class: "btn-primary" %>
   

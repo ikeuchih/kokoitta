@@ -12,6 +12,9 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
                     
+    validates :profile, length: { maximum: 250 }
+    mount_uploader :image, ImageUploader
+    
     
     def feed
       Micropost.where("user_id = ?", id)

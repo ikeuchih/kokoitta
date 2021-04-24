@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
             if !params[:micropost][:tag_ids].nil? && @micropost.save
                 # マイクロポストとタグidがないと保存できないように
                 
-                @micropost.save_tag(params[:micropost][:tag_ids])
+                @micropost.save_tag(params[:micropost][:tag_ids],params[:micropost][:spottag_ids])
                 # マイクロポストが保存されたら
                 # マイクロポストとタグIDとともにsave_tagしてね
                 
@@ -46,7 +46,7 @@ class MicropostsController < ApplicationController
     private
     
         def micropost_params
-          params.require(:micropost).permit(:content, :picture, tag_ids:[])
+          params.require(:micropost).permit(:content, :picture, tag_ids:[], spottag_ids:[])
         end
 
         

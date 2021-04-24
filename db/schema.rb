@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210418060649) do
+ActiveRecord::Schema.define(version: 20210422095526) do
+
+  create_table "micropost_spots", force: :cascade do |t|
+    t.integer "micropost_id"
+    t.integer "spottag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["micropost_id"], name: "index_micropost_spots_on_micropost_id"
+    t.index ["spottag_id"], name: "index_micropost_spots_on_spottag_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -20,6 +29,12 @@ ActiveRecord::Schema.define(version: 20210418060649) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "spottags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tag_maps", force: :cascade do |t|
@@ -48,6 +63,8 @@ ActiveRecord::Schema.define(version: 20210418060649) do
     t.string "username"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.string "image"
+    t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

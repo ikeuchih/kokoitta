@@ -56,3 +56,18 @@ Tag.create([
     { tag_name: 'Romania'},
     { tag_name: 'Russia'},
 ])
+
+
+Spottag.create([
+    { name: 'Dinner'},
+    { name: 'Lunch'},
+    { name: 'Breakfarst'},
+    { name: 'Cafe'},
+    { name: 'Sea'},
+    { name: 'Scenery'},
+    { name: 'Tourism'},
+    { name: 'Activity'},
+    { name: 'Amusement park'},
+    { name: 'Museum'},
+    { name: 'Remains'}
+])

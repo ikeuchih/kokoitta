@@ -265,11 +265,12 @@ span.picture {
 
 // showpage
   
-
-.row {
-  .col-md-8 {
+.col-md-8 {
     color: #bc8f8f;
+    .tag_name {
+      background-color: #bc8f8f;
+      color: #fffafa;
+    }
   }
-}
 
 
