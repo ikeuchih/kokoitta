@@ -39,6 +39,9 @@ class MicropostsController < ApplicationController
         def show
             @micropost = params[:tag_id].present? ? Tag.find(params[:tag_id]).micropost : Micropost.all
         end
+        
+        
+        
     
         
         

@@ -8,6 +8,7 @@
                 <%= @user.username %>
                 <%= @user.email %>
                 <!--↑いったん仮で出しとく-->
+                <%= render 'relationships/follow_button', user: @user %>
             </h1>
         </section>
     </aside>

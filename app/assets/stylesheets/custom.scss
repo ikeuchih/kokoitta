@@ -225,20 +225,28 @@ input {
   .image {
     background-color: #ffffff;
     margin-top: 500px;
-    .tag_name {
-      background-color: #bc8f8f;
-      color: #ffffff;
-      text-align: center;
-      display: block;
-      margin-left: 250px;
-      margin-right: 300px;
-    }
-    .timestamp {
-      color: #B37E70;
-      display: block;
-      margin-left: 250px;
-      margin-right: 300px;
-    }
+  }
+  .tag_name {
+    background-color: #bc8f8f;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    margin-left: 250px;
+    margin-right: 300px;
+  }
+  .spottag_name {
+    background-color: #E69585;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    margin-left: 250px;
+    margin-right: 300px;
+  }
+  .timestamp {
+    color: #B37E70;
+    display: block;
+    margin-left: 250px;
+    margin-right: 300px;
   }
   
   

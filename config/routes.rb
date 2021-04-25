@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy, :show]
   resources :trend
   
+  resources :relationships, only: [:create, :destroy]
+
   
 end
